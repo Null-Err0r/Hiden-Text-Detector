@@ -239,3 +239,6 @@ Wordlist: Brute-forcing requires a wordlist file. Without it, archive password c
 Language Support: OCR is configured for Persian (fas). Modify the lang parameter in extract_ocr for other languages.
 File Types: Only supported file types (.jpg, .png, .jpeg, .mp3, .zip, .rar) are analyzed.
 Log File: Ensure write permissions for scan_log.txt in the project directory.
+
+
+![Repo Badge](https://visitor-badge.laobi.icu/badge?page_id=null-err0r.Hiden-Text-Detector) 
