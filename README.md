@@ -241,4 +241,13 @@ File Types: Only supported file types (.jpg, .png, .jpeg, .mp3, .zip, .rar) are 
 Log File: Ensure write permissions for scan_log.txt in the project directory.
 
 
+
+## 📄 License | لایسنس
+
+This project is licensed under the [MIT License](LICENSE).  
+این پروژه تحت لایسنس MIT منتشر شده است.
+
+
+
+
 ![Repo Badge](https://visitor-badge.laobi.icu/badge?page_id=null-err0r.Hiden-Text-Detector) 
