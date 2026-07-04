@@ -1,259 +1,146 @@
-# Hiden Text Detector
-<div align="center">
-  <br><br>
-  <a href="https://t.me/NullError_ir" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=Telegram" alt="Telegram" />
-  </a>
-</div>
-<br>
+# 🕵️‍♂️ Hiden Text Detector (Pro Edition)
 
- یک برنامه مبتنی بر پایتون است که برای شناسایی و استخراج داده‌های مخفی از انواع فایل‌ها، از جمله تصاویر، فایل‌های صوتی و آرشیوها طراحی شده است. این برنامه از تکنیک‌های متعددی مانند استگانوگرافی (LSB)، استخراج متادیتای EXIF، OCR، تحلیل متادیتای MP3، محاسبه هش، رمزگشایی Base64، رمزگشایی کلاسیک/XOR و کرک کردن رمز آرشیوها پشتیبانی می‌کند. این برنامه دارای رابط کاربری گرافیکی مبتنی بر Tkinter با قابلیت کشیدن و رها کردن و سیستم لاگ برای ردیابی یافته‌ها است.
-ویژگی‌ها
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-شناسایی استگانوگرافی: استخراج داده‌های مخفی در تصاویر با استفاده از استگانوگرافی LSB.
-استخراج متادیتای EXIF: بازیابی متادیتا از فایل‌های تصویری.
-تحلیل OCR: شناسایی متن در تصاویر با استفاده از Tesseract OCR (با پشتیبانی از زبان فارسی).
-استخراج متادیتای MP3: تحلیل متادیتا در فایل‌های صوتی MP3.
-محاسبه هش: محاسبه هش SHA-256 فایل‌ها.
-رمزگشایی Base64: تلاش برای رمزگشایی محتوای فایل به‌صورت Base64.
-رمزگشایی کلاسیک/XOR: اعمال رمزگشایی ROT13، رمز سزار و XOR به محتوای متنی.
-کرک آرشیو: تلاش برای کرک رمز فایل‌های ZIP و RAR با استفاده از وردلیست.
-تحلیل Hex EOF: شناسایی فایل‌های ZIP یا RAR مخفی در انتهای فایل‌ها.
-رابط کاربری: رابط مبتنی بر Tkinter با قابلیت انتخاب پوشه با کشیدن و رها کردن و لاگ‌های اسکن در زمان واقعی.
+یک برنامه مبتنی بر پایتون است که برای شناسایی و استخراج داده‌های مخفی از انواع فایل‌ها، از جمله تصاویر، فایل‌های صوتی و آرشیوها طراحی شده است. این برنامه از تکنیک‌های متعددی مانند استگانوگرافی (LSB)، استخراج متادیتای EXIF، OCR، تحلیل متادیتای MP3، محاسبه هش، رمزگشایی Base64، رمزگشایی کلاسیک/XOR و کرک کردن رمز آرشیوها پشتیبانی می‌کند. 
+این برنامه دارای رابط کاربری گرافیکی مبتنی بر **Tkinter** با قابلیت کشیدن و رها کردن (Drag & Drop) و سیستم گزارش‌دهی زنده است.
 
-انواع فایل‌های پشتیبانی‌شده
+---
 
-تصاویر: .jpg, .png, .jpeg
-صوت: .mp3
-آرشیوها: .zip, .rar
+## ✨ ویژگی‌ها | Features
 
-پیش‌نیازها
+- 🖼️ **شناسایی استگانوگرافی:** استخراج داده‌های مخفی در تصاویر با استفاده از استگانوگرافی LSB.
+- 📷 **استخراج متادیتای EXIF:** بازیابی متادیتا و اطلاعات پنهان از فایل‌های تصویری.
+- 📝 **تحلیل OCR:** شناسایی متن در تصاویر با استفاده از Tesseract OCR (با پشتیبانی از زبان فارسی).
+- 🎵 **استخراج متادیتای MP3:** تحلیل متادیتا در فایل‌های صوتی MP3.
+- 🔐 **محاسبه هش:** محاسبه هش SHA-256 فایل‌ها.
+- 🧩 **رمزگشایی Base64:** استخراج امن رشته‌های متنی از درون فایل‌های باینری و رمزگشایی Base64.
+- 🔠 **رمزگشایی کلاسیک/XOR:** بررسی هوشمند و امن انواع فایل‌ها با الگوریتم‌های ROT13، سزار و XOR روی بایت‌ها.
+- 💣 **کرک آرشیو (Memory-Safe):** کرک رمز فایل‌های ZIP و RAR با وردلیست‌های فوق حجیم بدون مصرف RAM اضافی (طراحی Lazy Loading).
+- 🔍 **تحلیل Hex EOF:** جستجوی بایت‌های جادویی (Magic Bytes) برای یافتن فایل‌های مخفی در انتهای سایر فایل‌ها.
+- 🖥️ **رابط کاربری حرفه‌ای:** رابط کاربری Tkinter کاملاً Thread-Safe دارای نوار پیشرفت (Progress Bar) و گزارش‌دهی زنده.
 
-سیستم‌عامل:
- ویندوز، لینوکس یا macOS
- 
-پایتون:
- نسخه ۳.۸ یا بالاتر
- 
-وابستگی‌ها:
+---
 
-نصب پکیج‌های پایتون مورد نیاز:
+## 📁 انواع فایل‌های پشتیبانی‌شده | Supported Files
 
-pip install pillow pytesseract stegano exifread python-magic mutagen tkinterdnd2
+- 🖼️ **تصاویر:** `.jpg`, `.png`, `.jpeg`
+- 🎧 **صوت:** `.mp3`
+- 🗄️ **آرشیوها:** `.zip`, `.rar`
+- 📄 **متن:** `.txt`
 
+---
 
+## ⚙️ پیش‌نیازها | Prerequisites
 
-نیازهای سیستمی اضافی:
+- 💻 **سیستم‌عامل:** ویندوز، لینوکس یا macOS
+- 🐍 **پایتون:** نسخه ۳.۸ یا بالاتر
 
-
-Tesseract OCR: نصب Tesseract و اطمینان از وجود آن در PATH سیستم.
-
-در اوبونتو:
-
- sudo apt install tesseract-ocr tesseract-ocr-fas
- 
-در ویندوز:
-
- دانلود و نصب از Tesseract GitHub
- 
-
-
-libmagic: برای شناسایی نوع فایل مورد نیاز است.
-در اوبونتو:
- sudo apt install libmagic1
- 
-در ویندوز:
- نصب python-magic-bin (pip install python-magic-bin)
- 
-
-
-unrar: برای پشتیبانی از فایل‌های RAR.
-در اوبونتو:
- sudo apt install unrar
- 
-در ویندوز:
-
- نصب unrar.dll و اطمینان از دسترسی به آن.
-
-
-
-
-
-
-اختیاری:
-یک فایل وردلیست (.txt) برای کرک رمز آرشیوها.
-
-
-
-
-وابستگی‌ها را نصب کنید:
-
+### 📦 وابستگی‌های پایتون
+برای نصب پکیج‌های مورد نیاز، فایل `requirements.txt` در دسترس است:
+```bash
 pip install -r requirements.txt
+```
+*(شامل پکیج‌های: pillow, pytesseract, stegano, exifread, python-magic, mutagen, tkinterdnd2, rarfile)*
 
+### 🛠️ نیازهای سیستمی اضافی (System Requirements)
 
-یک فایل requirements.txt با محتوای زیر ایجاد کنید:
+🔹 **Tesseract OCR:** برای استخراج متن از عکس ضروری است.
+- **در اوبونتو:** `sudo apt install tesseract-ocr tesseract-ocr-fas`
+- **در ویندوز:** دانلود و نصب از مخزن گیت‌هاب Tesseract و افزودن به مسیر PATH سیستم.
 
-نصب وابستگی‌های سیستمی:
+🔹 **libmagic:** برای شناسایی دقیق نوع فایل‌ها.
+- **در اوبونتو:** `sudo apt install libmagic1`
+- **در ویندوز:** `pip install python-magic-bin`
 
-برای اوبونتو:
+🔹 **unrar:** برای باز کردن و استخراج فایل‌های RAR مخفی.
+- **در اوبونتو:** `sudo apt install unrar`
+- **در ویندوز:** دانلود `unrar.dll` و اطمینان از دسترسی سیستمی به آن.
 
-sudo apt update
-sudo apt install tesseract-ocr tesseract-ocr-fas libmagic1 unrar
+---
 
+## 🚀 استفاده | Usage
 
+۱. **اجرای اسکریپت:**
+   ```bash
+   python3 Hiden-Text-Detector.py
+   ```
+۲. **در رابط کاربری (GUI):**
+   - 📂 یک پوشه را بکشید و رها کنید (Drag & Drop) یا روی "Select Folder" کلیک کنید.
+   - 📖 *(اختیاری)* روی "Select Wordlist" کلیک کنید تا یک فایل وردلیست برای شکستن قفل آرشیوها بارگذاری شود.
+   - ▶️ روی "**Start Scan**" کلیک کنید تا اسکن آغاز شود.
+   - 📊 نتایج را در پنجره لاگ پایین صفحه ببینید. داده‌های مخفی با رنگ **سبز** و خطاها با رنگ **قرمز** مشخص می‌شوند.
+   - 🛑 برای توقف فرآیند در هر زمان، روی "**Stop Scan**" کلیک کنید.
 
-برای ویندوز:
+> 📝 **توجه:** لاگ‌های داده‌های مخفی به‌صورت خودکار در فایلی به نام `scan_log.txt` در همان پوشه ذخیره می‌شوند.
 
-نصب Tesseract OCR و افزودن آن به PATH.
-نصب python-magic-bin برای شناسایی نوع فایل.
-اطمینان از نصب unrar.dll برای پشتیبانی از RAR.
+---
 
+## 💡 نکات | Notes
 
+- ⏳ **عملکرد:** اسکن پوشه‌های حجیم یا کرک فایل‌های فشرده با وردلیست‌های چند گیگابایتی زمان‌بر است، اما به لطف طراحی جدید، رابط کاربری قفل نخواهد کرد.
+- 🔑 **وردلیست:** برای پیدا کردن پسورد فایل‌های ZIP و RAR حتماً باید یک فایل وردلیست معتبر آپلود کنید.
+- 🇮🇷 **زبان OCR:** سیستم OCR روی زبان فارسی (`fas`) تنظیم شده است. برای زبان‌های دیگر می‌توانید در سورس‌کد پارامتر زبان را تغییر دهید (`fas+eng`).
 
+---
 
-(اختیاری) یک فایل وردلیست برای کرک رمز آرشیوها آماده کنید.
+---
 
+# 🇬🇧 English Documentation
 
-استفاده
+## 🕵️‍♂️ Hiden Text Detector
 
-اسکریپت را اجرا کنید:
-python3 Hiden-Text-Detector.py
+The **Hidden Text Detector** is a powerful Python-based application designed to detect and extract hidden data from various file types, including images, audio files, and archives. It features a thread-safe **Tkinter GUI** with drag-and-drop functionality and real-time logs.
 
+## ✨ Features
 
-در رابط کاربری:
+- 🖼️ **Steganography Detection:** Extracts hidden data in images using LSB steganography.
+- 📷 **EXIF Metadata:** Retrieves hidden metadata from image files.
+- 📝 **OCR Analysis:** Detects text in images using Tesseract OCR.
+- 🎵 **MP3 Metadata:** Analyzes and extracts metadata from MP3 files.
+- 🔐 **Hash Calculation:** Computes SHA-256 hashes of analyzed files.
+- 🧩 **Base64 Decoding:** Safely extracts printable strings from binary files to decode Base64 data.
+- 🔠 **Classic/XOR Decryption:** Robust byte-level XOR and ROT13/Caesar analysis for all supported files.
+- 💣 **Archive Brute-Forcing:** Memory-safe (lazy-loaded) brute-forcing for ZIP and RAR passwords.
+- 🔍 **Hex EOF Analysis:** Detects hidden ZIP or RAR files appended to the end of other files via magic bytes.
+- 🖥️ **Thread-Safe GUI:** Progress bar and real-time scan logs without UI freezing.
 
-یک پوشه را با کشیدن و رها کردن یا کلیک روی "Select Folder" انتخاب کنید.
-(اختیاری) روی "Select Wordlist" کلیک کنید تا یک وردلیست برای کرک رمز آرشیوها بارگذاری شود.
-روی "Start Scan" کلیک کنید تا اسکن فایل‌ها آغاز شود.
-نتایج را در ناحیه متنی قابل پیمایش مشاهده کنید. داده‌های مخفی به رنگ سبز و خطاها به رنگ قرمز نمایش داده می‌شوند.
-برای توقف فرآیند روی "Stop Scan" کلیک کنید.
+## 📁 Supported File Types
+- Images: `.jpg`, `.png`, `.jpeg`
+- Audio: `.mp3`
+- Archives: `.zip`, `.rar`
+- Text: `.txt`
 
+## ⚙️ Prerequisites
 
-لاگ‌های داده‌های مخفی در scan_log.txt در پوشه پروژه ذخیره می‌شوند.
+**System:** Windows, Linux, or macOS  
+**Python:** 3.8+
 
-
-نکات
-
-عملکرد: اسکن پوشه‌های بزرگ یا کرک آرشیوها با وردلیست‌های بزرگ ممکن است زمان‌بر باشد.
-وردلیست: کرک رمز آرشیوها به یک فایل وردلیست نیاز دارد. بدون آن، کرک رمز انجام نمی‌شود.
-پشتیبانی از زبان: OCR برای زبان فارسی (fas) تنظیم شده است. برای زبان‌های دیگر، پارامتر lang در تابع extract_ocr را تغییر دهید.
-انواع فایل: فقط فایل‌های پشتیبانی‌شده (.jpg, .png, .jpeg, .mp3, .zip, .rar) تحلیل می‌شوند.
-فایل لاگ: اطمینان حاصل کنید که برای scan_log.txt در پوشه پروژه مجوز نوشتن وجود دارد.
-
-
-
-The Hidden Text Detector is a Python-based application designed to detect and extract hidden data from various file types, including images, audio files, and archives. It supports multiple techniques such as steganography (LSB), EXIF metadata extraction, OCR, MP3 metadata analysis, hash calculation, Base64 decoding, classic/XOR decryption, and brute-forcing archive passwords. The application features a user-friendly Tkinter GUI with drag-and-drop support and a log system to track findings.
-Features
-
-Steganography Detection: Extracts hidden data in images using LSB (Least Significant Bit) steganography.
-EXIF Metadata Extraction: Retrieves metadata from image files.
-OCR Analysis: Detects text in images using Tesseract OCR (with Persian language support).
-MP3 Metadata Extraction: Analyzes metadata in MP3 audio files.
-Hash Calculation: Computes SHA-256 hash of files.
-Base64 Decoding: Attempts to decode file content as Base64.
-Classic/XOR Decryption: Applies ROT13, Caesar cipher, and XOR decryption to text content.
-Archive Brute-Forcing: Attempts to crack ZIP and RAR archive passwords using a wordlist.
-Hex EOF Analysis: Detects hidden ZIP or RAR files appended to file ends.
-GUI: Tkinter-based interface with drag-and-drop folder selection and real-time scan logs.
-
-Supported File Types
-
-Images: .jpg, .png, .jpeg
-Audio: .mp3
-Archives: .zip, .rar
-
-Prerequisites
-
-Operating System: Windows, Linux, or macOS
-Python: Version 3.8 or higher
-Dependencies:
-Install required Python packages:
-pip install pillow pytesseract stegano exifread python-magic mutagen tkinterdnd2
-
-
-Additional system requirements:
-
-Tesseract OCR: Install Tesseract and ensure it's in your system PATH.
-On Ubuntu: sudo apt install tesseract-ocr tesseract-ocr-fas
-On Windows: Download and install from Tesseract GitHub
-
-
-libmagic: Required for file type detection.
-On Ubuntu: sudo apt install libmagic1
-On Windows: Install python-magic-bin (pip install python-magic-bin)
-
-
-unrar: For RAR file support.
-On Ubuntu: sudo apt install unrar
-On Windows: Install unrar.dll and ensure it's accessible.
-
-
-
-
-
-
-Optional:
-A wordlist file (.txt) for brute-forcing archive passwords.
-
-
-
-Install dependencies:
+Install Python dependencies:
+```bash
 pip install -r requirements.txt
+```
 
+**System Dependencies:**
+- **Tesseract OCR:** Required for reading text from images. (`sudo apt install tesseract-ocr tesseract-ocr-fas`)
+- **libmagic:** Required for accurate file type detection. (`sudo apt install libmagic1`)
+- **unrar:** Required for extracting RAR files. (`sudo apt install unrar`)
 
+## 🚀 Usage
 
-Install system dependencies:
-
-
-sudo apt install tesseract-ocr tesseract-ocr-fas libmagic1 unrar
-
-
-For Windows:
-
-Install Tesseract OCR and add it to your PATH.
-Install python-magic-bin for file type detection.
-Ensure unrar.dll is installed for RAR support.
-
-
-
-
-(Optional) Prepare a wordlist file for archive brute-forcing.
-
-
-Usage
-
-Run the script:
+Run the detector:
+```bash
 python3 Hiden-Text-Detector.py
+```
 
+Then simply select or drag-and-drop a folder to analyze, attach a Wordlist if you want to crack archives, and press **Start Scan**!
 
-In the GUI:
-
-Drag and drop a folder or click "Select Folder" to choose a directory.
-(Optional) Click "Select Wordlist" to load a wordlist for archive password cracking.
-Click "Start Scan" to begin analyzing files.
-View results in the scrollable text area. Hidden data is highlighted in green, errors in red.
-Click "Stop Scan" to halt the process.
-
-
-Logs of hidden data are saved to scan_log.txt in the project directory.
-
-
-Notes
-
-Performance: Scanning large folders or brute-forcing archives with large wordlists can be time-consuming.
-Wordlist: Brute-forcing requires a wordlist file. Without it, archive password cracking is skipped.
-Language Support: OCR is configured for Persian (fas). Modify the lang parameter in extract_ocr for other languages.
-File Types: Only supported file types (.jpg, .png, .jpeg, .mp3, .zip, .rar) are analyzed.
-Log File: Ensure write permissions for scan_log.txt in the project directory.
-
-
+---
 
 ## 📄 License | لایسنس
 
 This project is licensed under the [MIT License](LICENSE).  
 این پروژه تحت لایسنس MIT منتشر شده است.
-
-
-
 
 ![Repo Badge](https://visitor-badge.laobi.icu/badge?page_id=null-err0r.Hiden-Text-Detector) 
