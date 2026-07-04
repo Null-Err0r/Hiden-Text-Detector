@@ -1,8 +1,0 @@
-pillow
-pytesseract
-stegano
-exifread
-python-magic
-python-magic-bin; platform_system=="Windows"
-mutagen
-tkinterdnd2
